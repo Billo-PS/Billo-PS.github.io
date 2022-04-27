@@ -1,0 +1,99 @@
+---
+layout: default
+title: Overworld RNG
+permalink: /rng-guides/sword-shield/overworld
+---
+
+<div class="bg-dark title">
+  <h1 class="text-light text-center pt-3 pb-3">Sword/Shield Overworld RNG Guide</h1>
+</div>
+
+<hr />
+
+This guide will provide in-depth coverage of how to RNG abuse all types of overworld-based encounters in Sword/Shield using the SWSH Overworld RNG tool by <a href="https://github.com/LegoFigure11LegoFigure11">LegoFigure11</a>. 
+Overworld RNG abuse can be best utilized to obtain shiny and/or marked Pokemon from wild encounters! This can also be used to calculate other internal values such as IVs, nature and gender.<br /> <br />
+
+<h4><span class="fw-bold">Getting Started:</span></h4>
+<u>You will need:</u>
+<ul>
+  <li><a href="https://nightly.link/LegoFigure11/swsh-overworld-rng-gui/workflows/dotnet-desktop/main/SWSH-Overworld-RNG-GUI.zip">SWSH Overworld RNG GUI</a></li>
+  <li><a href="https://github.com/Koi-3088/sys-usb-botbase/releases">sys-usb-botbase</a></li>
+  <li><a href="https://github.com/spacemeowx2/ldn_mitm/releases/">ldn-mitm</a></li>
+</ul>
+
+<u>Installation Instructions:</u>
+<ol>
+  <li>Download and extract SWSH Overworld RNG GUI into an empty folder.</li>
+  <li>Download and extract sys-usb-botbase and ldn-mitm.</a></li>
+  <li>Place the <code>atmosphere</code> folder(s) from these downloads onto the root of your Switch SD card and reboot the console.</li>
+</ol>
+
+You can check the <code>atmosphere/contents</code> folder of your SD card and make sure the <code>430000000000000B</code> & <code>4200000000000010</code> folders are present before rebooting your console if you wish.<br /><br />
+
+<h4><span class="fw-bold">SWSH Overworld GUI Overview:</span></h4>
+
+<h4><span class="fw-bold">Monitoring the RNG state:</span></h4>
+Once we connect our console to the GUI we are able to monitor the RNG state in real-time. The number in the <code>Curr. adv.</code> field will display the amount of frames that have passed since we initially connected to the tool. 
+The amount frames that advance naturally will heavily depend on your in-game environment and location. <u>For the purposes of this guide we will be referring to slow-paced natural advancements as "Quiet" and fast-faced as "Noisy"</u>. <br /><br />
+
+<h6><span class="fw-bold">Environment Control:</span></h6>
+It's fundamentally important to understand how to control your environment, the more noisy the environment the more difficult it becomes to control the speed of frame advancements, which in turn will increase the difficulty of actually hitting a desirable target frame.
+There are three main contributors to the amount of natural noise in an area, these are:<br />
+
+<ol>
+  <li><span class="fw-bold">Location -</span> Some areas will simply be more noisy than others.</li>
+  <li><span class="fw-bold">Weather -</span> Extreme weather conditions such as rain, thunderstorm and sandstorm will have a large effect on noise.</li>
+  <li><span class="fw-bold">Other Pokemon that are present -</span> Having other Pokemon spawned will advance the RNG state moreso than if there were none spawned.</li>
+</ol>
+
+<u>Examples:</u></ br>
+- In Crown Tundra the RNG is naturally quiet, so we will have a relatively easy time hunting a Pokemon in clear weather conditions.
+- In Isle of Armor the RNG is naturally noisy, so we will have a more difficult time hunting Pokemon in general.
+- If we added rainy weather to either of these situations we would increase the amount of natural noise, and further increase the instability.</ br></ br>
+
+In all cases it's best to target a Pokemon in a quiet area when possible for the sake of having an easier time. It is worth noting that some Pokemon can only be hunted in unstable overworld environments.</ br></ br>
+You can check all the spawn locations for your Pokemon using the <a href="https://lincoln-lm.github.io/JS-Finder/Tools/SWSHEncounterSlots.html">SWSH Encounter-slots finder</a>!
+
+<h4><span class="fw-bold">Advancing the RNG state:</span></h4>
+Multiple in-game actions can be used to advance the RNG state with varying influence, these are:
+
+<ol>
+  <li><span class="fw-bold">Player movement -</span>Each time you input a new direction on the control stick the RNG state will advance a small amount. (+1/+2 advancements)</li>
+  <li><span class="fw-bold">Active NPCs -</span>Standing near an NPC will "activate" them, this will advance the RNG state quite rapidly. (Area specific advancements)</li>
+  <li><span class="fw-bold">Rotom Bike -</span>Mounting and dismounting the bike will advance the RNG state a small amount, but moreso than player movement. (Area specific advancements)</li>
+  <li><span class="fw-bold">Day skipping -</span>We can use the dayskip feature of the GUI to advance the RNG state rapidly and will be our go-to mathod for large amounts of frame advancements.</li>
+</ol>
+
+Important: The amount of frames that advance per day skipped depends on the amount of Pokemon currently in your boxes. 
+More Pokemon in boxes = More frames skipped per day, take this into account before starting and fill up your boxes as much as possible to take advantage of the day skip feature. </ br></ br>
+
+<div class="bg-secondary title">
+  <h1 class="text-light text-center pt-3 pb-3">The Process</h1>
+</div>
+
+This portion of the guide will cover the process of RNG abusing a Pokemon from each type of encounter. The types of encounter we will look at will be Static, Slot, and Hidden encounters, we will also cover Galarian Articuno, Zapdos and Moltres as these have a unique method.
+Each method we dive into will have a differing approach, so be sure to read through and grab an understanding of the type of encounter you are doing before making attempts. </ br></ br>
+
+First, lets give definitions to each type of encounter...
+<ul>
+  <li><span class="fw-bold">Static -</span> These are the one-per-day spawns with 100% chance-of-encounter and have an overworld model. <u>Cannot be Brilliant Aura.</u></li>
+  <li><span class="fw-bold">Slot -</span> These are the by-chance encounters in the grass with an overworld model. <u>Can be Brilliant Aura.</u></li>
+  <li><span class="fw-bold">Hidden -</span> These are the by-chance encounters in the grass that do not have an overworld model, the "shaky grass" type of encounters. <u>Cannot be Brilliant Aura.</u></li>
+</ul>
+
+<span class="fw-bold">Great! Now we know all the terminology, it's time to get started!</span></ br></ br>
+
+<h4><span class="fw-bold">Static Encounters:</span></h4>
+
+<h4><span class="fw-bold">Slot Encounters:</span></h4>
+
+<h4><span class="fw-bold">Hidden Encounters:</span></h4>
+
+<h4><span class="fw-bold">Galarian Articuno, Zapdos and Moltres:</span></h4>
+
+<a type="button" class="list-group-item list-group-item-primary text-end" style="border-radius: 0.25rem;" href="/">
+  I don't want to be a cloner! Send me home!
+  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+  </svg>
+</a>
