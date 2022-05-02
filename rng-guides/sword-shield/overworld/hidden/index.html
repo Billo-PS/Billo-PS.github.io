@@ -79,6 +79,47 @@ It's important to note that different areas and/or environments can have a drast
 
 <hr />
 
+This section covers how to troubleshoot encounters and delays. If you miss a target, spawning in the wrong Pokemon, or can't find your result on the GUI, this is the place to be.<br /><br />
+
+<h3><span class="fw-bold">Missing Targets:</span></h3>
+The commonly occuring reasons for missing a target Pokemon are:
+<ul>
+  <li>Encounter did not spawn.</li>
+  <li>Encounter spawned too late due to overstepping.</li>
+  <li>There is a delay left unaccounted for.</li>
+  <li>Frame was "hit" but incorrect species of Pokemon was encountered.</li>
+</ul>
+
+<h5><span class="fw-bold">Encounter did not spawn or spawned too late...</span></h5>
+
+This is a common issue players will face when tackling hidden encounters. Simply retry and search for a new target frame and make sure your player positioning is correct. Standing directly next to the grass is advised as you will be able to spawn a hidden encounter in 1-2 steps. You will know if you are standing too close when the player starts the crouching animation, this is something we want to avoid as it messes with player movement.<br /><br />
+
+<span class="fw-bold">Figure 9 -</span> Crouching animation<br />
+<img src="./hidden/figure-9-crouching-animation.jpg" style="width:600px;height:300px;"><br /><br />
+
+<h5><span class="fw-bold">Troubleshooting delay...</span></h5>
+
+Most hidden encounters do not need to account for delay, this mostly applies to encounters in extreme weather conditions or in an otherwise unstable environment, like having other spawned Pokemon present. Your delay is calculated by <code>frame hit - Frame initated = delay</code> we can use the <code>Read Encounter</code> feature of the GUI to confirm the frame we are hitting and see if we need to account for any delay. Here'x how it's done!
+<ul>
+  <li>Aim for a target, such as any shiny Pokemon.</li>
+  <li>Walk into the grass and initiate an encounter. Take note of the frame you decide to walk into the grass on.</li>
+  <liEncounter the Pokemon and click the <code>Read Encounter</code> button if you didn't find the Pokemon what you expected.</li>
+  <li>Do a filterless search and find the frame you hit, take note of the number and subtract the target frame number from it.</li>
+  <li>This will be your delay for that particular encounter.</li>
+</ul>
+
+<u>If you are RNG abusing in unstable conditions you should record delays for multiple attempts before aiming for a target and check for any consistent delay counts. It is also advised to aim for large clusters where possible to increase your chances of actually hitting the target.</u><br /><br />
+
+<span class="fw-bold">Figure 10 -</span> Delay troubleshooting example<br />
+<img src="./hidden/figure-10-troubleshooting-delay.png" style="width:600px;height:300px;"><br /><br />
+
+We hit a shiny, but it wasn't Sinistea-Antique! So what happened here? We actually hit a different frame within a shiny cluster which contained the encounterslot values for Morgrem, let's take a look by setting the encounter slot range to 0-99.<br /><br />
+
+<span class="fw-bold">Figure 11 -</span> Finding the frame<br />
+<img src="./hidden/figure-11-findng-the-frame.png" style="width:600px;height:300px;"><br /><br />
+
+Here we can see the the shiny cluster, and Morgrem was indeed a shiny Pokemon within the cluster (Encounterslot value of 0-19). We ended up 2 frames earlier than desired, and will adjust accordingly for next time by entering the grass 2 frames later.<br /><br />
+
 <a type="button" class="list-group-item list-group-item-primary text-end" style="border-radius: 0.25rem;" href="/rng-guides/sword-shield/overworld">
   Send me back!
   <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
