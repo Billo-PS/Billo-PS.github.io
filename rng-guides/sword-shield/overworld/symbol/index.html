@@ -15,7 +15,7 @@ If you made it this far, it must mean you have an interest in RNG abusing Pokemo
 <h3><span class="fw-bold">Getting Started:</span></h3>
 <u>Before starting, do the following:</u>
 <ul>
-  <li>Find an ideal location and weather condition for your Pokemon using the <a href="https://lincoln-lm.github.io/JS-Finder/Tools/SWSHEncounterSlots.html">SWSH Encounter-slots finder</a></li>
+  <li>Find an ideal location and weather condition for your Pokemon using the <a href="https://lincoln-lm.github.io/JS-Finder/Tools/SWSHEncounterSlots.html">SWSH Encounter-slots finder</a>.</li>
   <li>Head to the location in-game and stand near the grass, ideally with minimal NPCs or spawned Pokemon present.</li>
   <li>Run far enough away to despawn the Pokemon in the grass and save.</li>
   <li>Press the Home button on your controller, click connect on the GUI, then fill in the details of your hunt on the GUI accordingly.</li>
@@ -23,20 +23,25 @@ If you made it this far, it must mean you have an interest in RNG abusing Pokemo
 
 <h3><span class="fw-bold">Important Information:</span></h3>
 <u>Rand Held Items & egg moves...</u><br />
-The <code>Rand Held Item</code> checkbox should be checked if your Pokemon can hold an item when found in a wild encounter. It is also important to fill in the <code>Possible EMs</code> field correctly to ensure accurate predictions from the RNG tool.<br /> <br />
+The <code>Rand Held Item</code> - This checkbox should be checked if your Pokemon can hold an item when found in a wild encounter. <br /> <br />
+<code>Possible EMs</code> - This field should be correctly filled as per the species you are hunting to ensure accurate predictions from the RNG tool.<br /> <br />
 
-You can quickly find the information you need using LegoFigure11's <a href="https://legofigure11.github.io/misc/swsh-owrng-encounter-details/">SWSH OWRNG encounter details tool</a>.<br /> <br />
+You can quickly this information using LegoFigure11's <a href="https://legofigure11.github.io/misc/swsh-owrng-encounter-details/">SWSH OWRNG encounter details tool</a>.<br /> <br />
 
 <u>Brilliant Aura...</u><br />
 This is the <a href="https://www.serebii.net/swordshield/brilliantaura.shtml">yellow glow</a> occasionally present on symbol encounters. Brilliant Aura Pokemon are guaranteed to have 2-3 full 31 IVs, this makes them ideal for those who wish to RNG abuse high IV wild Pokemon.<br /> <br />
 
 <u>The KO mechanic...</u><br />
-This is a mechanic used to increase the odds of Brilliant Aura and shiny odds of Pokemon <u>with</u> Brilliant Aura. It is advised to KO at least 100 of a specific species if you wish to significantly increase the odds of finding Brilliant Aura. <a href="https://twitter.com/Sibuna_Switch/status/1448334955461939210">This Twitter thread by Anubis</a> contains a more detailed break down of odds and statistics. It is important that KO counts are correctly entered into the GUI.<br /> <br />
+This is a mechanic used to increase the odds of Brilliant Aura and shiny odds of Pokemon <u>with</u> Brilliant Aura. You can find the total number of Pokemon KO'd by looking it up in your Pokedex. This information should be entered into the RNG tool.<br /> <br />
+
+It's advised to KO at least 100 of the species you wish to hunt to significantly increase the chances of finding that Pokemon with Brilliant Aura. <a href="https://twitter.com/Sibuna_Switch/status/1448334955461939210">This Twitter thread by Anubis</a> contains a more detailed break down of odds and statistics.<br /> <br />
 
 <h3><span class="fw-bold">Time to get to work!</span></h3>
-We will be aiming for a Swablu in Giant's Bed, and our goal will be to walk towards the grass to spawn a symbol encounter on the calculated target frame given to us by the RNG tool. We will be using the advancement methods listed on the main page of this guide, primarily <u>day skip</u>, <u>bike</u> and <u>player movement</u> advances.<br /><br />
+We will be aiming for a Swablu in Giant's Bed, our goal will be to walk towards the grass to spawn a symbol encounter on the calculated target frame given to us by the RNG tool. We will be using the advancement methods listed on the main page of this guide, primarily <u>day skip</u>, <u>bike</u> and <u>player movement</u> advances. The species of symbol encounters is determined by randomness, which means we need to work out the encounter slot value of our desired Pokemon.<br /><br />
 
-The species of symbol encounters is determined by randomness, which means we need to work out the encounter slot value of our desired Pokemon. Using Swablu as the example we can notice an encounter slot range of 80-94, a level range of 60-65 and is a symbol encounter in Overcast weather. Lets enter this information into the GUI!<br /><br />
+Using Swablu as the example; the <a href="https://lincoln-lm.github.io/JS-Finder/Tools/SWSHEncounterSlots.html">SWSH Encounter-slots finder</a> tells us that Swablu has an encounter slot range of 80-94, a level range of 60-65 and is a symbol encounter in Overcast weather. The <a href="https://legofigure11.github.io/misc/swsh-owrng-encounter-details/">SWSH OWRNG encounter details tool</a> tells us that Swablu does not hold a random held item and has a number of egg moves and our Pokedex tells us we have >500 KOs on Swablu.
+
+Lets enter this information into the GUI!<br /><br />
 
 <span class="fw-bold">Figure 1 -</span> Finding the details of our encounter using the SWSH Encounter-slots Finder<br />
 <img src="./symbol/figure-1-encounter-slot-tool.png" style="width:600px;height:300px;"><br /><br />
@@ -44,7 +49,7 @@ The species of symbol encounters is determined by randomness, which means we nee
 <span class="fw-bold">Figure 2 -</span> Entering the information into the GUI<br />
 <img src="./symbol/figure-2-gui-connected-filled.png" style="width:600px;height:300px;"><br /><br />
 
-<span class="fw-bold">Awesome, everything looks good!</span> Time to find an ideal position to stand in-game and check the weather condition. If the weather is not sunny, select the <code>Weather</code> checkbox in the GUI.<br /><br />
+<span class="fw-bold">Awesome, everything looks good!</span> Time to find an ideal position to stand in-game and check the weather condition.<br /><br />
 
 <span class="fw-bold">Figure 3 -</span> Finding an ideal location<br />
 <img src="./symbol/figure-3-in-game-positioning.jpg" style="width:600px;height:300px;"><br /><br />
@@ -81,9 +86,9 @@ We will aim to walk into the grass on frame 42-48... Patiently watch the <code>C
 <img src="./symbol/figure-8-in-battle-encounter-switch-symbol.jpg" style="width:600px;height:300px;"><br /><br />
 <img src="./symbol/figure-9-summary-screen-switch-symbol.jpg" style="width:600px;height:300px;"><br /><br />
 
-After initiating the encounter, click the "Read Encounter" button to confirm what we hit. We can see the Swablu matches up with the output of the GUI, mission accomplished!<br /><br />
+After initiating the encounter click the "Read Encounter" button to confirm what we hit. We can see the Swablu matches up with the output of the GUI, mission accomplished!<br /><br />
 
-It's important to note that different areas and/or environments can have a drastic influence on delay, if you are missing targets when you believe you should be finding results consider reading the Troubleshooting Encounters section down below.<br /><br />
+Different areas & environments can have a drastic influence on delay, if you are missing targets when you believe you should be finding results, you should consider reading the Troubleshooting Encounters section down below.<br /><br />
 
 <hr />
 
@@ -93,7 +98,7 @@ It's important to note that different areas and/or environments can have a drast
 
 <hr />
 
-This section covers how to troubleshoot encounters and delays. If you miss a target, spawning in the wrong Pokemon, or can't find your result on the GUI, this is the place to be.<br /><br />
+This section covers how to troubleshoot encounters and delays. If you keep missing targets, spawning in the wrong Pokemon, or can't find your result on the RNG tool, this is the place to be.<br /><br />
 
 <h3><span class="fw-bold">Missing Targets:</span></h3>
 The commonly occuring reasons for missing a target Pokemon are:
@@ -120,7 +125,7 @@ Some symbol encounters do not need to account for delay, this mostly applies to 
   <li>This will be your delay for that particular encounter.</li>
 </ul>
 
-<u>If you are RNG abusing in unstable conditions you should record delays for multiple attempts before aiming for a target and check for any consistent delay counts. It is also advised to aim for large clusters where possible to increase your chances of actually hitting the target.</u><br /><br />
+<u>When RNG abusing in unstable conditions you should record delays for multiple attempts before aiming for a target and check for any consistent delay counts. It is also advised to aim for large clusters where possible to increase your chances of actually hitting the target.</u><br /><br />
 
 <span class="fw-bold">Figure 10 -</span> Delay troubleshooting example<br />
 <img src="./symbol/figure-10-troubleshooting-delay.png" style="width:600px;height:300px;"><br /><br />
@@ -133,9 +138,15 @@ We hit a shiny, but it wasn't Swablu! So what happened here? We actually hit a d
 Here we can see the the shiny cluster, and Linoone was indeed a shiny Pokemon within the cluster (Encounterslot value of 70-79). We ended up 1-2 frames later than desired and will adjust accordingly for next time by walking into the grass 1-2 frames earlier.<br /><br />
 
 <h5><span class="fw-bold">Cannot find result...</span></h5>
-If you cannot find your result on the tool this is likely because the Pokemon you encountered does or does not have a random held item and the box is incorrectly checked on the GUI. Click the rand held item box and search again to find the frame you actually hit.<br /><br />
+If you cannot find the Pokemon you are in battle with anywhere on the tool this is likely due to one of two reasons:
+<ul>
+  <li>Player was positioned too close to the grass and the Pokemon had already been generated long before walking into it.</li>
+  <li>Information entered into the RNG tool was not completely accurate.</li>
+</ul>
 
-If you are adamant that you have filled in the GUI correctly consider repositioning yourself in-game.<br /><br />
+Try to reposition your character and see if your issue persists, if you are still having problems double check the information on the tool is entered correctly using the resources found at the top of this page.<br /><br />
+
+Pokemon of different species will potentially have differing egg move count and Pokedex KO count, they also may/may not hold a random held item when found in the wild. These are all contributing factors that need accounting for when troubleshooting your encounters.<br /><br />
 
 That's all there is to it!<br /><br />
 
