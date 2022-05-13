@@ -63,7 +63,7 @@ It's common to see clusters of shiny frames when searching for a target, a clust
 
 Advance the RNG state while watching the <code>Curr adv.</code> box, head towards the spawn point of the Pokémon when you see your target number on-screen. <br /><br />
 
-Glimwood Tangle has a base delay of 3. This means our target frames for this example will be advances x-y. You can find out how to calculate delay at the bottom of this page in the Troubleshooting Encounters section.<br /><br /> 
+Glimwood Tangle has a base delay of 5~. This means our target frames for this example will be advances x-y. You can find out how to calculate delay at the bottom of this page in the Troubleshooting Encounters section.<br /><br /> 
 
 <span class="fw-bold">Figure 4 -</span> Target frame hit!<br />
 <img src="./images/hidden/figure-4-hitting-target-hidden.png" style="width:675px;height:400px;"><br /><br />
@@ -129,9 +129,9 @@ We hit a shiny, but it wasn't Sinistea-Antique! So what happened here? We actual
 <u>If the Pokemon you find is non shiny you will need to be more specific with your filters, include the exact IVs displayed in the <code>Read Encounter</code> box to easily find the frame that you hit.</u><br /><br />
 
 <span class="fw-bold">Figure 10 -</span> Troubleshooting Encounter-slots<br />
-<img src="./images/hidden/figure-10-encounter-lookup-troubleshooting-morgrem.png" style="width:675px;height:400px;"><br /><br />
+<img src="./images/hidden/figure-10-encounter-lookup-troubleshooting-morgrem.gif" style="width:675px;height:400px;"><br /><br />
 
-Here we can see PokemonHere was indeed a shiny Pokémon within the cluster (Encounterslot value of x-y according to <code>Encounter Lookup</code>). Our goal was frame x and we hit frame y, the tool shows these values are a match 1-2 frames later than our desired target frame, we will adjust accordingly by walking into the grass 2 frames earlier next time.<br /><br />
+Here we can see PokemonHere was indeed a shiny Pokémon within the cluster (Encounterslot value of 0-19 according to <code>Encounter Lookup</code>). Our goal was frame 3,996 and we hit frame 4005, the tool shows these values are a match 9 frames later than our desired target frame, we will adjust accordingly by walking into the grass 9~ frames earlier next time.<br /><br />
 
 <h5><span class="fw-bold">Cannot find result...</span></h5>
 If you cannot find the Pokémon you are in battle with anywhere on the tool this is likely due to one of two reasons:
