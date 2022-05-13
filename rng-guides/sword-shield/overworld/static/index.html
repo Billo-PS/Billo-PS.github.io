@@ -58,10 +58,10 @@ It's common to see clusters of shiny frames when searching for a target, a clust
 
 Advance the RNG state while watching the <code>Curr adv.</code> box, head towards the spawn point of the Pokémon when you see your target number on-screen.<br /><br />
 
-<span class="fw-bold">Figure  4 -</span> Target Frame Hit!.<br />
+<span class="fw-bold">Figure  4 -</span> Target Frame Hit!<br />
 <img src="./images/static/figure-4-static-hit-duraludon.png" style="width:675px;height:400px;"><br /><br />
 
-We hit our target frame! If you believe you spawned the Pokémon on the correct frame, run towards the it and initiate the encounter, once you are in-battle use the <code>Read Encounter</code> feature of the generator to confirm the Pokémon you are in battle with matches the output of the generator.<br /><br />
+<span class="fw-bold">We hit our target frame!</span> If you believe you spawned the Pokémon on the correct frame, run towards the it and initiate the encounter, once you are in-battle use the <code>Read Encounter</code> feature of the generator to confirm the Pokémon you are in battle with matches the output of the generator.<br /><br />
 
 <span class="fw-bold">Figure 5/6/7 -</span> Result Found!<br />
 <img src="./images/static/figure-5-static-result-found.png" style="width:675px;height:400px;"><br /><br />
@@ -83,12 +83,12 @@ Different areas & environments can have a drastic influence on delay, if you are
 This section covers how to troubleshoot encounters and delays. If you keep missing targets, spawning in the wrong Pokémon, or can't find your result on the RNG tool, this is the place to be.<br /><br />
 
 <h3><span class="fw-bold">Missing Targets:</span></h3>
-The commonly occuring reasons for missing a target Pokémon are:
+<u>The commonly occuring reasons for missing a target Pokémon are:</u>
 <ul>
   <li>Encounter did not spawn.</li>
   <li>Encounter spawned too late due to mistiming.</li>
   <li>There is a delay left unaccounted for.</li>
-  <li>Information in the RNG tool is not completely accurate.</li>
+  <li>Information in the <code>Seed Finder</code> tab was not completely accurate.</li>
 </ul>
 
 <h5><span class="fw-bold">Encounter did not spawn or spawned too late...</span></h5>
@@ -97,7 +97,7 @@ This is a common issue players will face when tackling static encounters. Simply
 
 <h5><span class="fw-bold">Troubleshooting delay...</span></h5>
 
-Most static encounters do not need to account for delay, this mostly applies to encounters in extreme weather conditions or in an otherwise unstable environment, like having other spawned Pokémon present. Your delay is calculated by <code>frame hit - Frame initated = delay</code>. We can use the <code>Read Encounter</code> feature of the RNG tool to confirm the frame we are hitting and see if we need to account for any delay. Here's how it's done!
+Most static encounters do not need to account for delay, this applies most to encounters in extreme weather conditions or in an otherwise unstable environment, like having other spawned Pokémon present. Your delay is calculated by <code>frame hit - Frame initated = delay</code>. We can use the <code>Read Encounter</code> feature of the RNG tool to confirm the frame we are hitting and see if we need to account for any delay. Here's how it's done!
 <ul>
   <li>Aim for a target, such as any shiny Pokémon.</li>
   <li>Walk towards the grass, spawn the Pokemon and initiate an encounter. Take note of the frame you the Pokémon was spawned on.</li>
@@ -108,20 +108,20 @@ Most static encounters do not need to account for delay, this mostly applies to 
 
 <u>When RNG abusing in unstable conditions you should record delays for multiple attempts before aiming for a target and check for any consistent delay counts. It is also advised to aim for large clusters where possible to increase your chances of actually hitting the target.</u><br /><br />
 
-<span class="fw-bold">Figure 10 -</span> Delay troubleshooting example<br />
-<img src="./images/static/figure-10-troubleshooting-delay.png" style="width:675px;height:400px;"><br /><br />
+<span class="fw-bold">Figure 8 -</span> Delay troubleshooting example<br />
+<img src="./images/static/figure-8-troubleshooting-encounters.png" style="width:675px;height:400px;"><br /><br />
 
-We encountered an Aerodactyl, but it wasn't shiny! So what happened here? Well... We miscalculated. Let's try to find the frame we actually hit.<br /><br />
+We encountered an Duraludon, but it wasn't shiny! So what happened here? Well... We miscalculated. Let's try to find the frame we actually hit.<br /><br />
 
-<span class="fw-bold">Figure 11 -</span> Finding the frame<br />
-<img src="./images/static/figure-11-finding-the-frame.png" style="width:675px;height:400px;"><br /><br />
+<span class="fw-bold">Figure 9 -</span> Finding the frame<br />
+<img src="./images/static/figure-9-locating-frame.gif" style="width:675px;height:400px;"><br /><br />
 
-Here we can see the the shiny cluster, and frame we hit was 2 frames behind where we wanted to be. We will adjust accordingly for next time by walking into the grass 2 frames later.<br /><br />
+By doing a filterless search we can see the the shiny cluster, and frame we hit was 2 frames behind where we wanted to be, oh well! We will adjust accordingly for next time by walking into the grass 2 frames later.<br /><br />
 
 <h5><span class="fw-bold">Cannot find result...</span></h5>
 If you cannot find the Pokémon you are in battle with anywhere on the tool this is likely due to one of two reasons:
 <ul>
-  <li>Player was positioned too close to the grass and the Pokémon had already been generated long before walking into it.</li>
+  <li>Player was positioned too close to the spawn and the Pokémon had already been generated long before walking into it.</li>
   <li>The information entered into the Main tab of the RNG tool was not completely accurate.</li>
 </ul>
 
