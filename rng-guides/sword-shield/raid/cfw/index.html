@@ -1,1 +1,182 @@
+---
+layout: default
+title: Raid RNG (CFW)
+permalink: /cfw/swsh/raid
+---
 
+<div class="bg-dark title">
+  <h1 class="text-light text-center pt-3 pb-3">Raid RNG Guide (CFW)</h1>
+</div>
+
+<hr />
+
+This guide will provide in-depth coverage oF how to RNG abuse Max Raid Dens in Sword/Shield! Raid RNG abuse can be used to obtain shiny Pokemon and desirable IV/Nature combinations for any Pokemon in the dens.<br /> <br />
+
+<span class="fw-bold">This guide assumes you are using a CFW Switch console running Atmosphere and caters towards Windows devices.</span><br /> <br />
+
+<a type="button" class="list-group-item list-group-item-primary text-end" style="border-radius: 0.25rem;" href="/retail/swsh/raid">
+  Click here for the retail RNG abuse guide (unmodified Switch console)!
+  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+  </svg>
+</a>
+<br>
+
+<h3><span class="fw-bold">Getting Started:</span></h3>
+<u>You will need:</u>
+<ul>
+  <li><a href="https://github.com/LegoFigure11/swsh-overworld-rng-gui/releases">RaidFinder</a></li>
+  <li><a href="https://github.com/spacemeowx2/ldn_mitm/releases/">PKHeX</a></li>
+  <li><a href="https://github.com/spacemeowx2/ldn_mitm/releases/">PKHeX Raid Plugin</a></li>
+  <li><a href="https://github.com/Koi-3088/sys-usb-botbase/releases">Luxray</a></li>
+</ul>
+
+If you are not using a Windows device you will either need to find a method of running PKHeX on your device (such as this one), or use Capturesight to identify your current seeds.
+
+//left it here for now
+
+
+<u>Installation Instructions:</u>
+<ol>
+  <li>Download and extract all the contents from the <code>SWSH_OWRNG_Generator_GUI.zip</code> into an empty folder.</li>
+  <li>Download and extract all the contents from the <code>sys-usb-botbase</code> & <code>ldn-mitm</code> downloads into an empty folder.</a></li>
+  <li>Place the <code>atmosphere</code> folder(s) from these downloads onto the root of your Switch SD card.</li>
+  <li>Check the <code>/atmosphere/contents</code> directory of your SD card for two folders named <code>430000000000000B</code> & <code>4200000000000010</code>.</li>
+  <li>Reboot your Switch console and launch CFW.</li>
+</ol>
+
+<h3><span class="fw-bold">Tool Setup:</span></h3>
+
+<span class="fw-bold">Figure 1/2 -</span> Main window overview<br />
+<img src="./overworld/images/main-page/figure-1-seedfinder.png" style="width:675px;height:400px;"><br /><br />
+
+This is the main tab of the generator with default configurations. To start with, enter the local IP address of your console into the <code>Switch IP:</code> field of the main window and click <code>Connect</code>. You should now see the text
+<code>Status: Connected</code> and a number displaying in the <code>Curr. Adv.:</code> field. <u>This is an indication of a successful connection to the generator.</u><br /><br />
+
+<img src="./overworld/images/main-page/figure-2-seedfinder-connected.png" style="width:675px;height:400px;"><br /><br />
+
+Once connected, you'll notice <span class="fw-bold">that the State [0]/State[1] & TID/SID fields are automatically filled!</span> You do not need to fill in this information manually.<br /><br />
+
+<u>Let's take a closer look at the main window before moving onto the next section:</u>
+<ul>
+  <li><span class="fw-bold">The field below Init. adv. is the frame range or amount of frames to search through.</span> Set this to an amount you are comfortable with.</li>
+  <li><span class="fw-bold">You can use the IVs/Shiny/Mark filters to search for specific internal details.</span> On specific encounter types you can even filter for Brilliant Aura!</li>
+  <li><span class="fw-bold">The checkboxes on the left should be filled out according to your desired hunt.</span> We can quickly find this information using the <code>Encounter Lookup</code> tab of the generator.</li>
+  <li><span class="fw-bold">You should check the <code>Shiny Charm</code> & <code>Mark Charm</code> boxes if those items are present your save file.</span> It's recommended to aquire both of these items before starting.</li>
+  <li><span class="fw-bold">Read Encounter will read any wild encounter mid-battle.</span> This can be used to quickly troubleshoot delays. (More on this later!)</li>
+</ul>
+
+<span class="fw-bold">Figure 3 -</span> Encounter Lookup tab overview<br />
+<img src="./overworld/images/main-page/figure-3-encounter-lookup.gif" style="width:675px;height:400px;"><br /><br />
+
+This is the <code>Encounter Lookup</code> tab. Searching for a specific species in the dropdown list will bring up a list of every possible wild encounter for that Pokémon in the entire game.<br /><br />
+
+<h5><span class="fw-bold">Environment Control:</span></h5>
+For the purposes of this guide, the term "noisy" is used to describe an area or environment in which the RNG state naturally advances at a fast pace.<br /><br />
+
+<u>There are three main contributors to the amount of natural noise in an area, these are:</u>
+<ol>
+  <li><span class="fw-bold">Location -</span> Some areas will simply be more noisy than others.</li>
+  <li><span class="fw-bold">Weather -</span> Extreme weather conditions such as rain, thunderstorm, and sandstorm will have a large effect on noise.</li>
+  <li><span class="fw-bold">Other Pokémon that are present -</span> Having other Pokémon spawned will advance the RNG state moreso than if there were none spawned.</li>
+</ol>
+
+<u>Examples:</u><br />
+- In Crown Tundra, the area is naturally <u>quiet</u>, so we will have a <u>relatively easy</u> time hunting a Pokémon in clear weather conditions.<br />
+- In Isle of Armor, the area is naturally <u>noisy</u>, so we will have a <u>more difficult</u> time hunting Pokémon in general.<br />
+- If we added rainy weather to either of these situations, we would increase the amount of natural noise and further increase the instability.<br /><br />
+
+In all cases, it's best to target a Pokémon in a quiet area. However, sometimes you will be forced into an unstable environment due to a lack of options.<br /><br />
+
+<h3><span class="fw-bold">Advancing the RNG State:</span></h3>
+<u>Multiple in-game actions can be used to advance the RNG state with varying influence, these include:</u>
+<ol>
+  <li><span class="fw-bold">Player movement -</span> Each time the player stops moving the control stick, the RNG state will advance a small amount - Roughly 1-3 advancements per input.</li><br />
+  <li><span class="fw-bold">Rotom Bike -</span> Mounting and dismounting the bike with the <code>+</code> button will advance the RNG state a small amount. - Area specific advancements.</li><br />
+  <li><span class="fw-bold">Menu close -</span> Opening and closing the pause menu will advance the RNG state a small amount depending on your location and amount of NPCs in the area. - Area specific advancements.</li><br />
+  <li><span class="fw-bold">Animations -</span> Having your Pokemon animate on the party summary screen will advance the RNG state a small amount. - One advancment per "click" on the party menu, 1 advancement per motion on the summary page.</li>
+  <br />
+  <li><span class="fw-bold">Active NPCs -</span> Standing near an NPC will cause them to become active, this will advance the RNG state rapidly. - Area specific advancements, good for covering large amounts of advancements quickly.</li><br />
+  <li><span class="fw-bold">Map & Flying -</span> Flying into an area will advance the RNG state too! - Area specific advancements, this is only used for Articuno, Zapdos and Moltres.</li><br />
+</ol>
+
+<h3><span class="fw-bold">Day Skipping:</span></h3>
+
+We can use <code>DaySkip</code> feature to advance up to a total of around 13,000 advancements per day skipped. The amount of frames that advance by Day Skipping is heavily influenced by the amount of Pokémon currently stored in your boxes (not
+including eggs). The number will increase drastically if you store more Pokémon.<br /><br />
+
+If you plan to use the <code>DaySkip</code> feature, you should take a moment to monitor your advances to avoid overshooting your target frame. Connect to the GUI and skip a day at a time and take note of the amount of frames that have
+advanced.<br /><br />
+
+<hr />
+
+<div class="bg-secondary title">
+  <h1 class="text-light text-center pt-3 pb-3">The Process</h1>
+</div>
+
+There are four types of encounters: Static, Symbol, Hidden, & Fishing. Each method has differing techniques you can use, and it's important to understand the types of encounters before making attempts.<br /><br />
+
+Galarian Articuno, Zapdos and Moltres are static encounters with a unique method of RNG abuse, for this reason they have been covered on a seperate page.<br /><br />
+
+<u>First, lets give definitions to each type of encounter...</u><br />
+<ul>
+  <li><span class="fw-bold">Static -</span> These are the 100% chance-of-encounter spawns with an overworld model. <u>Cannot be Brilliant Aura.</u></li>
+  <li><span class="fw-bold">Symbol -</span> These are the by-chance encounters in the grass with an overworld model. <u>Can be Brilliant Aura.</u></li>
+  <li><span class="fw-bold">Hidden -</span> These are the by-chance encounters in the grass that do not have an overworld model, they're indicated by the "!" symbol when walking into a patch of grass. <u>Cannot be Brilliant Aura.</u></li>
+  <li><span class="fw-bold">Fishing -</span> These are the by-chance encounters in the water that do not have an overworld model, they're indicated by rippling areas in the water. <u>Can be Brilliant Aura.</u></li>
+</ul>
+
+<span class="fw-bold">Great! Now that we know all the terminology, it's time to get started!</span><br /><br />
+Search the species you wish to hunt on the <code>Encounter Lookup</code> tab of the generator and pick one of the encounters from the list. Take note of the type of encounter you have chosen and click on the page that applies to you!<br /><br />
+
+<h3><span class="fw-bold">Static Encounters:</span></h3>
+
+<a type="button" class="list-group-item list-group-item-primary text-end" style="border-radius: 0.25rem;" href="/cfw/swsh/overworld/static">
+  Click here if your desired hunt is a STATIC ENCOUNTER!
+  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+  </svg>
+</a>
+<br>
+
+<h3><span class="fw-bold">Symbol Encounters:</span></h3>
+
+<a type="button" class="list-group-item list-group-item-primary text-end" style="border-radius: 0.25rem;" href="/cfw/swsh/overworld/symbol">
+  Click here if your desired hunt is a SYMBOL ENCOUNTER!
+  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+  </svg>
+</a>
+<br>
+
+<h3><span class="fw-bold">Hidden Encounters:</span></h3>
+
+<a type="button" class="list-group-item list-group-item-primary text-end" style="border-radius: 0.25rem;" href="/cfw/swsh/overworld/hidden">
+  Click here if your desired hunt is a HIDDEN ENCOUNTER!
+  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+  </svg>
+</a>
+<br>
+
+<h3><span class="fw-bold">Fishing Encounters:</span></h3>
+
+<a type="button" class="list-group-item list-group-item-primary text-end" style="border-radius: 0.25rem;" href="/cfw/swsh/overworld/fishing">
+  Click here if your desired hunt is a FISHING ENCOUNTER!
+  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+  </svg>
+</a>
+<br>
+
+<h3><span class="fw-bold">Galarian Articuno, Zapdos and Moltres:</span></h3>
+
+<a type="button" class="list-group-item list-group-item-primary text-end" style="border-radius: 0.25rem;" href="/cfw/swsh/overworld/galar-bird-trio">
+  Click here if your desired hunt is Articuno, Zapdos or Moltres!
+  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+  </svg>
+</a>
+<br>
+
+<hr />
