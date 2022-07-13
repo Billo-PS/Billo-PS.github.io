@@ -22,56 +22,84 @@ This guide will provide in-depth coverage oF how to RNG abuse Max Raid Dens in S
 </a>
 <br>
 
-<h3><span class="fw-bold">Getting Started:</span></h3>
+<h3><span class="fw-bold">Download & Installation:</span></h3>
 
-<h4><span class="fw-bold">Download Links:</span></h4>
+<h4><span class="fw-bold">PC Applications:</span></h4>
 
-<u>PC Applications:</u>
+<u>Download Links:</u>
 <ul>
   <li><a href="https://github.com/Admiral-Fish/RaidFinder/releases">RaidFinder</a></li>
   <li><a href="https://projectpokemon.org/home/files/file/1-pkhex/">PKHeX</a></li>
 </ul>
-  
-You should download the version of RaidFinder appropriate for your operating system, for example, if you are using a Windows machine you should download RaidFinder for Windows.<br /> <br />
 
-If you are not using Windows OS you will either need an alternative method of running PKHeX on your device <a href="https://projectpokemon.org/home/forums/topic/40026-pkhex-for-mac/">such as this method for running PKHeX on Mac OS</a>.<br /> <br />
+<u>Installation Instructions:</u>
+<ol>
+  <li>Download and extract all the contents from the <code>RaidFinder</code> download into an empty folder.</li>
+  <li>Download and extract <code>PKHeX.exe</code> from the PKHeX download into an empty folder.</li>
+  <li>Create a new folder inside the same directory as <code>PKHeX.exe</code>, called <code>plugins</code>.</li>
+</ol>
 
-<u>PKHeX plugins:</u>
+<u>Important Information:</u>
+<ul>
+  <li>If you are not using a device running Windows, you will need to find an alternative method of running <code>.exe</code> files in order to use PKHeX, running PKHeX on alternative operating systems will not be covered in this guide.</li>
+  <li>You will need to download a version of RaidFinder that is compatible with your operating system.</li>
+  <li>RaidFinder depends on <a href="https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170">Microsoft C++ Redistributable</a>, download and install this before starting.</li>
+</ul>
+ 
+<h4><span class="fw-bold">PKHeX Plugins:</span></h4>
+
+<u>Download Links:</u>
 <ul>
   <li><a href="https://github.com/architdate/PKHeX-Plugins/releases/">PKHeX Plugins (For Livehex)</a></li>
   <li><a href="https://github.com/Leanny/PKHeX_Raid_Plugin/releases/">PKHeX Raid Plugin</a></li>
 </ul>
 
-Plugins will likely need to be unblocked in order to use them. To resolve this, right click the <code>.dll</code> files, click <code>Properties</code> then click the <code>Unblock</code> checkbox at the bottom of the properties window.<br /> <br />
+<u>Installation Instructions:</u>
+<ol>
+  <li>Download and extract all the contents from the <code>PKHeX-Plugins.zip</code> into the <code>plugins</code> folder you made earlier.</li>
+  <li>Download the <code>PKHeX-Raid-Plugin.dll</code> into the same <code>plugins</code> folder.</li>
+  <li>Right click each of the plugins inside the folder and click <code>Properties</code>, click "Unblock" at the bottom of the Window that appears on screen. (If you do not see this button you will not need to follow this step.)</li>
+</ol>
 
-PKHeX plugins are used to significantly simplify the process of seed finding. Consider using Capturesight if you are unable to use PKHeX. Capturesight is otherwise not required for the purposes of this guide.<br /> <br />
-
-<u>Switch applications:</u>
+<u>Important Information:</u>
 <ul>
+  <li>PKHeX plugins are used to significantly simplify the process of searching for raid seeds.</li>
+  <li>You can confirm your plugins are working by launching <code>PKHeX.exe</code>, if done correctly the Pokeball icon on the taskbar should now be blue.</li>
+  <li>You can find your plugins by clicking <code>Tools</code> on the main window of PKHeX. All of your installed plugins will be available here.</li>
+  <li>If you are experiencing issues when launching <code>PKHeX.exe</code> with the plugins, this is due to a plugins mismatch. You may need to download an older version of PKHeX that works with the latest version of the plugins you are using, or wait for the developers of the plugins to update them accordingly.</li>
+</ul>
+
+<h4><span class="fw-bold">Switch Applications & Sysmodules:</span></h4>
+
+<u>Download Links:</u>
+<ul>
+  <li><a href="https://github.com/olliz0r/sys-botbase/releases/">sys-botbase</a></li>
   <li><a href="https://github.com/3096/luxray/releases/">Luxray</a></li>
   <li><a href="https://github.com/zaksabeast/CaptureSight/releases/">Capturesight</a></li>
 </ul>
-  
-To use the Luxray & Capturesight overlays Tesla/NXOvloader is a required, you can find their installation guide <a href="https://gbatemp.net/threads/tesla-the-nintendo-switch-overlay-menu.557362/"on this page.</a><br /> <br />
 
-After following the installation guide for Tesla, place the overlays into the <code>.overlays</code> folder on your switch SD card and restart the console to be able to use them.<br /> <br />
-
-<h4><span class="fw-bold">Installation instructions:</span></h4>
+<u>Installation Instructions:</u>
 <ol>
-  <li>Download and extract all the contents from the <code>RaidFinder</code> download into an empty folder.
-  <li>Download and extract all the contents from the <code>PKHeX</code> download into a new empty folder. (This should not be the same empty folder used for RaidFinder.)</li>
-  <li>Create a new folder next to <code>PKHeX.exe</code>, rename this folder to <code>plugins</code>. (All PKHeX plugins should be added to this folder.)</li>
-  <li>Download the ALM (Livehex) Plugin and extract the contents of the download into the new <code>plugins</code> folder.
-  <li>Download the PKHeX Raid Plugin and add this into the <code>plugins</code> folder.<li>
+  <li>Extract the <code>atmosphere</code> folder of the <code>sys-botbase</code> into a new empty folder.</li>
+  <li>Create a second folder inside this directory called <code>switch</code>
+  <li>Create another folder inside the <code>switch</code> directory called <code>.overlays</code></li>
+  <li>Extract the contents of the <code>Luxray</code> & <code>Capturesight</code> downloads into the <code>.overlays</code> folder.</li>
+  <li>Move the <code>atmosphere</code> and <code>switch</code> folders to the root of your Switch SD card and reboot the console.</li>
 </ol>
 
-You should now be able to launch PKHeX and RaidFinder. You can check if your PKHeX plugins are running properly by locating them in the <code>Tools</code> tab of the main PKHeX window, your installed plugins will be present here.<br /> <br />
-
-If you are experiencing issues when launching <code>PKHeX.exe</code> with the plugins, this is due to a plugins mismatch. You may need to download an older version of PKHeX that works with the latest version of the plugins you are using, or wait for the developers of the plugins to update them accordingly.<br /> <br />
+<u>Important Information:</u>
+<ul>
+  <li>Capturesight is an alternative method of searching for raid seeds using a Switch overlay instead of PKHeX. It is otherwise not required for the purposes of this guide.</li>
+  <li>Tesla and NxOvloader are required in order to run overlays on Switch, you can find their installation guide <a href="https://gbatemp.net/threads/tesla-the-nintendo-switch-overlay-menu.557362/"on this page.</li>
+</ul>
   
-<span class="fw-bold">Setup Complete!</span> It's time to get to work and start RNG abusing some Max Raid Dens.<br /> <br />
+<span class="fw-bold">Setup Complete!</span> From here the guide assumes you have everything you need in order to begin RNG abusing Max Raid Dens. Make sure you have followed the setup instructions carefully.<br /> <br />
 
 <hr />
+
+<h3><span class="fw-bold">Required Reading:</span></h3>
+
+This portion of the guide covers the important information a player should know before attempting to RNG abuse a Max Raid Den. 
 
 //left it here for now
 
